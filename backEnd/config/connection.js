@@ -1,6 +1,7 @@
+require ("dotenv").config();
 const mongoose = require("mongoose");
 
-const URI =  "mongodb+srv://maddshatn:Ox94vN2Vrvu011gp@cluster0.ldcgl3b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const URI =  process.env.MONGODB_URL;
 
 
 main()
