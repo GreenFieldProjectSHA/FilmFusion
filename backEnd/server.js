@@ -4,18 +4,17 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const verifyToken = require("./middleware/auth")
-const port = 4000;
+const port = 3004;
 
-const connection = require('./config/connection.js');
+const connection = require('./connection.js');
 
 
-// app.use(cors({
-//   origin: 'http://localhost:3002',
-//   methods: 'GET,POST,PUT,DELETE',
-//   allowedHeaders: 'Content-Type,Authorization'
-// }));
+app.use(cors({
+  origin: 'http://localhost:3002',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization'
+}));
 
-app.use(cors());
 app.use(express.json());
 
 
@@ -29,3 +28,6 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+
+
